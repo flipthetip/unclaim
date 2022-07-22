@@ -221,16 +221,16 @@ const Redeemer = (props: RedeemerProps) => {
   border-radius: 5%;
     
 `
-const TSC2 = styled("img")`
-width: 100%;
-height: 100%;
-object-fit: content;
-object-position: center;
-margin-bottom: 20px;
-margin-right: 0px;
-border-radius: 2%;
+// const TSC2 = styled("img")`
+// width: 100%;
+// height: 100%;
+// object-fit: content;
+// object-position: center;
+// margin-bottom: 20px;
+// margin-right: 0px;
+// border-radius: 2%;
   
-`
+// `
 
 
   return (
