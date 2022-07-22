@@ -360,7 +360,10 @@ const Redeemer = (props: RedeemerProps) => {
           <br/>↪ Sent a NFT to someone else and don't have/dont plan to have that NFT anymore.
           <br/>↪ And other similar scenarios from the above mentioned ones.
           </p>
+          <p style={{ color: "white", textAlign: 'left', fontSize: '12px', fontWeight: 'bold'}}>WHAT IF I GET THE NFT/TOKEN BACK TO MY WALLET?</p>
+          <p style={{ color: "orange", textAlign: 'left', fontSize: '12px' }}>Easy, Solana will just create a new Token account for them *again* to store them in your wallet on-chain.</p>
           <br/>
+          <p style={{ color: "white", textAlign: 'center', fontSize: '12px', fontWeight: 'bold'}}>CLICK ON ACTIVITY LOG BELOW TO SEE WHAT HAPPENED</p>
           {/* <p style={{ color: "gray"}}>follow me on <a href="https://twitter.com/HeyAndyS">Twitter</a> and <a href="https://www.youtube.com/channel/UCURIDSvXkuDf9XXe0wYnoRg">YouTube</a></p> */}
         </Paper>
       </Container>
