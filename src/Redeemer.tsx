@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { Container, Paper, Snackbar } from "@material-ui/core";
 import styled from 'styled-components';
 import Alert from "@mui/material/Alert";
-import Slider from '@mui/material/Slider';
-import Stack from '@mui/material/Stack';
+// import Slider from '@mui/material/Slider';
+// import Stack from '@mui/material/Stack';
 import { DataGrid, GridColDef, GridSelectionModel } from '@mui/x-data-grid';
-import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
+
 
 
 import * as anchor from "@project-serum/anchor";
@@ -81,9 +81,9 @@ const Redeemer = (props: RedeemerProps) => {
   const [selectionModel, setSelectionModel] = useState<GridSelectionModel>();
   const [donationPercentage, setDonationPercentage] = useState<number>(0);
 
-  const handleDonationChange = (event: Event, newValue: number | number[]) => {
-    setDonationPercentage(newValue as number);
-  };
+  // const handleDonationChange = (event: Event, newValue: number | number[]) => {
+  //   setDonationPercentage(newValue as number);
+  // };
 
   //const w2 = useWallet();
   //const rpcUrl = props.rpcHost;
