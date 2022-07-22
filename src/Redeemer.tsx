@@ -79,7 +79,7 @@ const Redeemer = (props: RedeemerProps) => {
     severity: undefined,
   });
   const [selectionModel, setSelectionModel] = useState<GridSelectionModel>();
-  const [donationPercentage, setDonationPercentage] = useState<number>(0);
+  // const [donationPercentage, setDonationPercentage] = useState<number>(0);
 
   // const handleDonationChange = (event: Event, newValue: number | number[]) => {
   //   setDonationPercentage(newValue as number);
@@ -166,7 +166,7 @@ const Redeemer = (props: RedeemerProps) => {
           //console.log(selectedPKs.length+ " accounts in queue.");
         }
 
-        const transactions = await createCloseEmptyAccountsTransactions(wallet.publicKey, selectedPKs, props.frcntrAccount, program, donationPercentage, props.donationAddress);
+        const transactions = await createCloseEmptyAccountsTransactions(wallet.publicKey, selectedPKs, props.frcntrAccount, program );
         for (const ta of transactions){
           const txid = await wallet.sendTransaction(ta,connection);
           console.log(txid);
@@ -220,16 +220,16 @@ const Redeemer = (props: RedeemerProps) => {
   border-radius: 5%;
     
 `
-const TSC2 = styled("img")`
-width: 100%;
-height: 40%;
-object-fit: cover;
-object-position: center;
-margin-bottom: 20px;
-margin-right: 0px;
-border-radius: 2%;
+// const TSC2 = styled("img")`
+// width: 100%;
+// height: 40%;
+// object-fit: cover;
+// object-position: center;
+// margin-bottom: 20px;
+// margin-right: 0px;
+// border-radius: 2%;
   
-`
+// `
 
 
   return (
