@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Button from '@material-ui/core/Button';
 import { CircularProgress } from '@material-ui/core';
 import { useState } from 'react';
-import { EmptyAccount } from './fee-redeemer';
+import { EmptyAccount } from './walletmanager';
 
 export const CTAButton = styled(Button)`
   width: 100%;

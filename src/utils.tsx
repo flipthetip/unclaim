@@ -1,7 +1,7 @@
 
 import * as sweb3 from '@solana/web3.js';
 import * as anchor from "@project-serum/anchor";
-import { EmptyAccount } from './fee-redeemer';
+import { EmptyAccount } from './walletmanager';
 import { GridSelectionModel } from '@mui/x-data-grid';
 
 

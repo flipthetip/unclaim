@@ -1,7 +1,7 @@
 
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import { EmptyAccount, MAX_CLOSE_INSTRUCTIONS, TotalRedemptions, solForEmptyAccounts } from './fee-redeemer';
+import { EmptyAccount, MAX_CLOSE_INSTRUCTIONS, TotalRedemptions, solForEmptyAccounts } from './walletmanager';
 
 type HeaderProps = {
   emptyAccounts?: EmptyAccount[];
