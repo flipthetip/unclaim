@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Container, Paper, Snackbar } from "@material-ui/core";
+import { Container, Paper, Snackbar, Typography } from "@material-ui/core";
 import styled from 'styled-components';
 import Alert from "@mui/material/Alert";
 // import Slider from '@mui/material/Slider';
@@ -20,6 +20,7 @@ import { EmptyAccount, TotalRedemptions, findEmptyTokenAccounts, createCloseEmpt
 import { Header } from "./Header";
 import { RedeemButton } from "./RedeemButton";
 import Link from "@mui/material/Link";
+import Grid from '@material-ui/core/Grid';
 
 export interface RedeemerProps {
   connection: anchor.web3.Connection;
@@ -220,22 +221,50 @@ const Redeemer = (props: RedeemerProps) => {
   border-radius: 5%;
     
 `
-// const TSC2 = styled("img")`
-// width: 100%;
-// height: 40%;
-// object-fit: cover;
-// object-position: center;
-// margin-bottom: 20px;
-// margin-right: 0px;
-// border-radius: 2%;
+const TSC2 = styled("img")`
+width: 100%;
+height: 100%;
+object-fit: content;
+object-position: center;
+margin-bottom: 20px;
+margin-right: 0px;
+border-radius: 2%;
   
-// `
+`
 
 
   return (
     
-    <Container maxWidth="md" style={{ marginTop: 10 }}>
+    <Container maxWidth="md" style={{ marginTop: 15  }}>
+      <Container maxWidth="sm" style={{ marginTop: 15, direction: "ltr", borderBottom: 'solid', borderBottomColor: '#292524' }}>
 
+
+          <h4 style={{ color: "white", textAlign: 'left', fontSize: '14px' }}>                    
+          <a href="https://utility.theshadyclass.xyz/">↪ Back to Instruments</a></h4>
+
+                  {/* <Grid item md={4}
+                        container
+                        direction="row"
+                        justifyContent="center"
+                        wrap="nowrap">
+                    <Typography variant="body2" color="textPrimary">
+                    <a href="https://utility.theshadyclass.xyz/">
+                    <TSC2 src="https://raw.githubusercontent.com/flipthetip/test-tsc/main/tase1%20(1).png" 
+                    alt="THESHADYCLASS"
+                      />              
+                    </a>
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      color="textPrimary"
+                      style={{ fontWeight: 'bold', fontSize: '10px' }}
+                    >
+                      Back to Instruments
+                    </Typography>
+                             
+                  </Grid> */}
+
+          </Container>
       <Container maxWidth="sm" style={{ position: 'relative' }}>
            
       <a href="https://www.theshadyclass.xyz/">
@@ -243,10 +272,10 @@ const Redeemer = (props: RedeemerProps) => {
           alt="THESHADYCLASS"  />              
           </a>
         <Paper
-          style={{ paddingTop: 5, paddingBottom: 20, paddingLeft: 20, paddingRight: 20, backgroundColor: '#292524', borderRadius: 6, textAlign: 'center' }}
+          style={{ paddingTop: 5, paddingBottom: 20, paddingLeft: 20, paddingRight: 20, backgroundColor: '#7f1d1d', borderRadius: 6, textAlign: 'center' }}
         >
           
-          <h4>WALLET MANAGER<br/>Claim un-used on-chain SOL</h4>
+          <h4>THE COLLECTOR<br/>Collect your un-used on-chain SOL</h4>
           {!wallet.connected ? (
             <ConnectButton>Connect Wallet</ConnectButton>
           ) : (
@@ -265,18 +294,46 @@ const Redeemer = (props: RedeemerProps) => {
               </MainContainer>
             </>
           )}
-          <p style={{ color: "white", textAlign: 'center', fontSize: '14px', fontWeight: 'bold'  }}>Connect your wallet to check your Claimable SOL | 👻</p>
+          <p style={{ color: "white", textAlign: 'center', fontSize: '14px'  }}>Connect your wallet to check SOL you can COLLECT | 👻</p>
           </Paper>
           <br/>
           <br/>
-
-
+          <Grid
+                        container
+                        direction="row"
+                        justifyContent="center"
+                        wrap="nowrap"
+                        >
+                  <Grid item xl={2}
+                        container
+                        direction="row"
+                        justifyContent="center"
+                        wrap="nowrap">
+                    <Typography variant="body2" color="textPrimary"
+                    style={{  marginLeft: 10, marginRight: 20 }}>
           <a href="https://twitter.com/theshadyclass">
+          <p style={{ color: "white", textAlign: 'center', fontWeight: 'bold' }}>📮 TWITTER</p></a>
+          <p style={{ color: "white", textAlign: 'center' }}>Twitter 👻  @theshadyclass</p>
+
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      color="textPrimary"
+                      style={{ fontWeight: 'bold', marginLeft: 20, marginRight: 10 }}
+                    >
+                    <a href="https://discord.gg/7SrNbVyHDD">
+                    <p style={{ color: "white", textAlign: 'center',  fontWeight: 'bold' }}>🤖 DISCORD</p></a> 
+                    <p style={{ color: "white", textAlign: 'center' }}>Join us in Discord</p>
+                    </Typography>
+                             
+                  </Grid>
+                  </Grid>
+          {/* <a href="https://twitter.com/theshadyclass">
           <p style={{ color: "white", textAlign: 'center', fontSize: '20px', fontWeight: 'bold' }}>📮 TWITTER</p></a>
           <p style={{ color: "white", textAlign: 'center', fontSize: '16px' }}>Follow us on Twitter | 👻 @theshadyclass</p>
           <a href="https://discord.gg/7SrNbVyHDD">
           <p style={{ color: "white", textAlign: 'center', fontSize: '20px', fontWeight: 'bold' }}>🤖 DISCORD</p></a> 
-          <p style={{ color: "white", textAlign: 'center', fontSize: '16px' }}>Join us in Discord</p>
+          <p style={{ color: "white", textAlign: 'center', fontSize: '16px' }}>Join us in Discord</p> */}
           <br/>
           <br/>
           <p style={{ color: "white", textAlign: 'center', fontSize: '12px', fontWeight: 'bold'}}>CONNECT WALLET ▶ DAPP CHECKS FOR EMPTY TOKEN ACCOUNTS ▶ SHOWS CLAIMABLE SOL ▶ HAPPINESS </p>
