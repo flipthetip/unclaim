@@ -238,7 +238,7 @@ const Redeemer = (props: RedeemerProps) => {
 
       <Container maxWidth="sm" style={{ position: 'relative' }}>
            
-      <a href="https://www.theshadyclass.xyz/" target="_blank">
+      <a href="https://www.theshadyclass.xyz/">
       <TSC src="https://raw.githubusercontent.com/flipthetip/test-tsc/main/ARC%201%20-%20THE%20DARKNESS%20(4).png" 
           alt="THESHADYCLASS"  />              
           </a>
