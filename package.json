@@ -1,5 +1,5 @@
 {
-  "name": "andys-fee-redeemer",
+  "name": "tsc-collector",
   "version": "0.1.42",
   "private": true,
   "dependencies": {

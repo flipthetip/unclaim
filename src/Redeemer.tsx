@@ -3,7 +3,7 @@ import { Container, Paper, Snackbar, Typography } from "@material-ui/core";
 import styled from 'styled-components';
 import Alert from "@mui/material/Alert";
 // import Slider from '@mui/material/Slider';
-// import Stack from '@mui/material/Stack';
+import Stack from '@mui/material/Stack';
 import { DataGrid, GridColDef, GridSelectionModel } from '@mui/x-data-grid';
 
 
@@ -80,7 +80,7 @@ const Redeemer = (props: RedeemerProps) => {
     severity: undefined,
   });
   const [selectionModel, setSelectionModel] = useState<GridSelectionModel>();
-  // const [donationPercentage, setDonationPercentage] = useState<number>(0);
+  const [donationPercentage] = useState<number>(0);
 
   // const handleDonationChange = (event: Event, newValue: number | number[]) => {
   //   setDonationPercentage(newValue as number);
@@ -167,7 +167,7 @@ const Redeemer = (props: RedeemerProps) => {
           //console.log(selectedPKs.length+ " accounts in queue.");
         }
 
-        const transactions = await createCloseEmptyAccountsTransactions(wallet.publicKey, selectedPKs, props.frcntrAccount, program );
+        const transactions = await createCloseEmptyAccountsTransactions(wallet.publicKey, selectedPKs, props.frcntrAccount, program, donationPercentage, props.donationAddress );
         for (const ta of transactions){
           const txid = await wallet.sendTransaction(ta,connection);
           console.log(txid);
@@ -178,7 +178,7 @@ const Redeemer = (props: RedeemerProps) => {
           if(!res.value.err){
             setAlertState({
               open: true,
-              message: "SOL credited. Token Account cleaup done.",
+              message: "SOL collected. Grats!",
               severity: "success",
             });
           } else {
@@ -266,27 +266,23 @@ const Redeemer = (props: RedeemerProps) => {
 
           </Container>
       <Container maxWidth="sm" style={{ position: 'relative' }}>
-           
+
       <a href="https://www.theshadyclass.xyz/">
       <TSC src="https://raw.githubusercontent.com/flipthetip/test-tsc/main/ARC%201%20-%20THE%20DARKNESS%20(4).png" 
           alt="THESHADYCLASS"  />              
           </a>
         <Paper
-          style={{ paddingTop: 5, paddingBottom: 20, paddingLeft: 20, paddingRight: 20, backgroundColor: '#7f1d1d', borderRadius: 6, textAlign: 'center' }}
+          style={{ paddingTop: 5, paddingBottom: 5, paddingLeft: 20, paddingRight: 20, backgroundColor: '#7f1d1d', borderRadius: 6, textAlign: 'center' }}
         >
           
-          <h4>THE COLLECTOR<br/>Collect your un-used on-chain SOL</h4>
+          <h4>THE COLLECTOR 🕵️</h4>
           {!wallet.connected ? (
-            <ConnectButton>Connect Wallet</ConnectButton>
+            <ConnectButton>PLUG YOUR WALLET</ConnectButton>
           ) : (
             <>
               <Header emptyAccounts={emptyAccounts} totalRedemptions={totalRedemptions} />
               <MainContainer>
-                {/* <Stack spacing={2} direction="row" alignItems="center">
-                <p>Donate:</p>
-                <Slider aria-label="Donation Percentage" defaultValue={0} step={0} min={0} max={100} onChange={handleDonationChange} color="secondary"/>
-                <p>{donationPercentage}%</p>
-                </Stack> */}
+
                   <RedeemButton
                     emptyAccounts={emptyAccounts}
                     onClick={onRedeem}
@@ -294,11 +290,24 @@ const Redeemer = (props: RedeemerProps) => {
               </MainContainer>
             </>
           )}
-          <p style={{ color: "white", textAlign: 'center', fontSize: '14px'  }}>Connect your wallet to check SOL you can COLLECT | 👻</p>
+
+          <p style={{ color: "white", textAlign: 'center', fontSize: '14px'  }}>COLLECTS YOUR UNUSED ON-CHAIN SOL<br/>Connect your wallet to check SOL you can COLLECT | 👻</p>
+          
           </Paper>
-          <br/>
-          <br/>
-          <Grid
+          <Stack spacing={2} direction="row" alignItems="center">
+                <p style={{ color: "white", textAlign: 'center', fontSize: '12px'  }}>NOTE: Soon a non-holder gets a small % charged. Fee:</p>
+                {/* <Slider aria-label="Donation Percentage" defaultValue={0} step={0} min={0} max={100} onChange={handleDonationChange} color="secondary"/> */}
+                <p style={{ color: "orange", textAlign: 'center', fontWeight: 'bold', fontSize: '12px' }}>{donationPercentage}%</p>
+                </Stack>
+                <p style={{ color: "white", textAlign: 'left', fontSize: '12px'  }}>
+                Read the FAQs below to know what this tool does. Note that this is a safe and secure dapp.</p>
+                {/* <p style={{ color: "white", textAlign: 'left', fontSize: '12px'  }}>
+                ↪ NOTE: If you re a holder, proceed to the HOLDER-ONLY channel in our&nbsp; 
+                <a href="https://discord.gg/7SrNbVyHDD">DISCORD</a> for fee-free access.<br/>
+                ↪ Also, read the FAQs below to know what this tool does.</p> */}
+                  <br/>
+                  <br/>
+                <Grid
                         container
                         direction="row"
                         justifyContent="center"
@@ -328,6 +337,8 @@ const Redeemer = (props: RedeemerProps) => {
                              
                   </Grid>
                   </Grid>
+
+                
           {/* <a href="https://twitter.com/theshadyclass">
           <p style={{ color: "white", textAlign: 'center', fontSize: '20px', fontWeight: 'bold' }}>📮 TWITTER</p></a>
           <p style={{ color: "white", textAlign: 'center', fontSize: '16px' }}>Follow us on Twitter | 👻 @theshadyclass</p>
@@ -382,7 +393,7 @@ const Redeemer = (props: RedeemerProps) => {
             onSelectionModelChange={setSelectionModel}
           />
       </div>
-      :<p>Zero Token Account to cleanup.</p>}
+      :<p>NOTHING TO COLLECT.</p>}
       <Snackbar
         open={alertState.open}
         autoHideDuration={6000}

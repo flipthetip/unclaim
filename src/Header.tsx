@@ -17,7 +17,7 @@ export const Header = ({ emptyAccounts, totalRedemptions }: HeaderProps) => {
           <Grid container direction="row" wrap="nowrap">
             <Grid container direction="column">
               <Typography variant="body2" color="textSecondary">
-                Empty Token Accounts:
+                Empty Pants/Token Accounts:
               </Typography>
               <Typography
                 variant="h6"
@@ -31,7 +31,7 @@ export const Header = ({ emptyAccounts, totalRedemptions }: HeaderProps) => {
             </Grid>
             <Grid container direction="column">
               <Typography variant="body2" color="textSecondary">
-                SOL available:
+                Your lost SOL:
               </Typography>
               <Typography
                 variant="h6"
